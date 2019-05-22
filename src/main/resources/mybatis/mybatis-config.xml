@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--Mybatis的setting配置 https://blog.csdn.net/u014231523/article/details/53056032-->
+    <settings>
+        <!-- 配置关闭缓存 -->
+        <setting name="cacheEnabled" value="false"/>
+        <!--将表字段中的下划线映射成驼峰命名方法 -->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <!--插入数据时，生成一个id-->
+        <setting name="useGeneratedKeys" value="true"/>
+        <!--执行类型，REUSE 执行器会重用预处理语句（prepared statements）-->
+        <setting name="defaultExecutorType" value="REUSE"/>
+        <!-- 事务超时时间 -->
+        <setting name="defaultStatementTimeout" value="600"/>
+    </settings>
+    
+    <!--定义一些类型以什么作为别名-->
+    <typeAliases>
+       <typeAlias type="com.rickycharles.house.common.model.User" alias="user" />
+    </typeAliases>
+
+    <!--定义sql文件的路径-->
+    <mappers>
+       <mapper resource="mapper/user.xml" />
+    </mappers>
+
+</configuration>
